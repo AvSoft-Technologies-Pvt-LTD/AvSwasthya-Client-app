@@ -7,7 +7,7 @@ const Counter = ({ end, duration = 2000, label, icon: Icon }) => {
     const animate = (currentTime) => {
       if (!startTime) startTime = currentTime;
       const progress = (currentTime - startTime) / duration;
-      
+
       if (progress < 1) {
         setCount(Math.floor(end * progress));
         requestAnimationFrame(animate);
@@ -17,7 +17,7 @@ const Counter = ({ end, duration = 2000, label, icon: Icon }) => {
     };
     requestAnimationFrame(animate);
   }, [end, duration]);
-return (
+  return (
     <div className="flex flex-col items-center p-3 bg-white/80 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
       <Icon className="text-cyan-500 text-2xl mb-1" />
       <div className="text-xl font-bold text-cyan-900">{count}+</div>
@@ -41,7 +41,7 @@ function Herosection() {
     const wordDelay = 2000;
     const type = () => {
       const currentMessage = messages[messageIndex];
-      
+
       if (isDeleting) {
         setDisplayText(currentMessage.substring(0, displayText.length - 1));
         if (displayText.length === 0) {
@@ -68,9 +68,15 @@ function Herosection() {
       <div className="absolute -top-10 -left-10 w-48 h-48 bg-cyan-200/70 rounded-blob transform rotate-45 animate-float"></div>
       <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-cyan-200/70 rounded-blob transform -rotate-12 animate-float-delay"></div>
       <div className="container mx-auto px-4 relative z-10">
+
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="lg:w-1/2 space-y-6">
-            <h1 className="text-3xl lg:text-6xl font-black text-cyan-900 leading-tight">
+
+          <div className="lg:w-1/2  ">
+            <h1 className='text-3xl  font-extrabold flex items-center bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text text-transparent'>
+              A<span className='text-cyan-900'>v</span>
+              <span className='text-transparent bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text ml-1'>Swastya</span>
+            </h1>
+            <h1 className="text-3xl lg:text-5xl font-black text-cyan-900 leading-tight">
               Your One-Stop{" "}
               <span className="text-transparent bg-gradient-to-r from-cyan-500 to-cyan-600 bg-clip-text">
                 Digital Healthcare
@@ -78,7 +84,7 @@ function Herosection() {
               <span className="text-cyan-900">  Platform</span>
             </h1>
             <div className="  flex items-center text-lg ">
-              <p className='me-2 text-xl text-cyan-900 font-bold' >Effortless healthcare at your fingertips</p>
+              <p className='me-2 text-l my-4 text-cyan-900 font-bold' >Effortless healthcare at your fingertips</p>
               <span className="text-lg text-cyan-700">{displayText}</span>
               <span className="animate-blink border-r-4 border-cyan-500 h-6 ml-1"></span>
             </div>
@@ -102,12 +108,12 @@ function Herosection() {
               </button>
             </div>
           </div>
-              <div className="relative w-full aspect-square max-w-xl mx-auto">
-                <div className="absolute inset-0 rounded-[40%_60%_60%_40%/40%_40%_60%_60%] shadow-2xl overflow-hidden opacity-80">
-                  <img
-                    src="/src/assets/output.jpg"
-                    alt="Online Medical Consultation"/>
-                </div>
+          <div className="relative w-full aspect-square max-w-xl mx-auto">
+            <div className="absolute inset-0 rounded-[40%_60%_60%_40%/40%_40%_60%_60%] shadow-2xl overflow-hidden opacity-80">
+              <img
+                src="/src/assets/output.jpg"
+                alt="Online Medical Consultation" />
+            </div>
           </div>
         </div>
       </div>
